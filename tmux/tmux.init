@@ -1,0 +1,14 @@
+tmux_init()
+{
+        tmux new-session -s "work" -d -n "main"
+	tmux split-window -h
+        tmux new-window -n "other"
+        tmux split-window -v
+        tmux split-window -h
+        tmux -2 attach-session -d
+}
+
+
+if which tmux 2>&1 >/dev/null; then
+#        test -z "$TMUX" && (tmux attach || tmux_init)
+fi
